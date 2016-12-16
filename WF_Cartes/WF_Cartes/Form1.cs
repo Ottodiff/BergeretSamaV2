@@ -10,11 +10,20 @@ using System.Windows.Forms;
 
 namespace WF_Cartes
 {
-    public partial class Form1 : Form
+    public partial class FrmCarte : Form
     {
-        public Form1()
+        
+
+        public FrmCarte()
         {
             InitializeComponent();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            //affiche la form a propos
+           APropos aPropos = new APropos();
+            aPropos.ShowDialog();
         }
     }
 }
