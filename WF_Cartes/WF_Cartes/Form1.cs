@@ -12,7 +12,7 @@ namespace WF_Cartes
 {
     public partial class FrmCarte : Form
     {
-        
+        Connexion co = new Connexion();
 
         public FrmCarte()
         {
@@ -24,6 +24,27 @@ namespace WF_Cartes
             //affiche la form a propos
            APropos aPropos = new APropos();
             aPropos.ShowDialog();
+        }
+
+        private void connexionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (co.EstCo == true)
+            {
+                co.EstCo = false;
+                connexionToolStripMenuItem.Text = "Connexion";
+            }
+            else
+            {
+                //affiche la fenetre de connexion
+                co.EstCo = true;
+                co.ShowDialog();
+                connexionToolStripMenuItem.Text = "Deconnexion";
+            }
+        }
+
+        private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

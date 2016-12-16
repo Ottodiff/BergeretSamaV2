@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.SQLite;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using System.Data.SQLite;
 
-namespace SADOWSKI_MCDs
+namespace WF_Cartes
 {
-    public class Utilisateur
+    class Utilisateur
     {
         private string _nom;
         private string _motDePasse;
@@ -45,7 +45,7 @@ namespace SADOWSKI_MCDs
         public bool login()
         {
 
-            SQLiteConnection sqlconnection = new SQLiteConnection("Data Source= MCDs.db");
+            SQLiteConnection sqlconnection = new SQLiteConnection("Data Source= carte.db");
             sqlconnection.Open();
 
             string CommandText = "SELECT * FROM Utilisateurs WHERE nomUtilisateur = '" + this.Nom + "' AND mdpUtilisateur = '" + this.Motdepasse + "'";
@@ -66,7 +66,7 @@ namespace SADOWSKI_MCDs
 
         public void nouvelUtilisateur()
         {
-            SQLiteConnection sqlconnection = new SQLiteConnection("Data Source= MCDs.db");
+            SQLiteConnection sqlconnection = new SQLiteConnection("Data Source= carte.db");
             sqlconnection.Open();
 
             //INSERT INTO table VALUES ('valeur 1', 'valeur 2', ...)
@@ -75,7 +75,7 @@ namespace SADOWSKI_MCDs
             SQLiteCommand cmd = new SQLiteCommand(CommandText, sqlconnection);
             cmd.ExecuteNonQuery();
 
-            sqlconnection.Close();            
+            sqlconnection.Close();
         }
     }
 }
