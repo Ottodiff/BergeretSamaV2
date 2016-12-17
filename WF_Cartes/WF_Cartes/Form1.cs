@@ -104,5 +104,10 @@ namespace WF_Cartes
             tbxType.Text = ty.typeSelect();
             tbxExtension.Text = ex.extensionSelect();
         }
+
+        private void btnSupprimer_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
