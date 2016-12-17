@@ -13,11 +13,25 @@ namespace WF_Cartes
     public partial class Connexion : Form
     {
         private bool _estCo;
+        private string _nomutilisateur;
 
         public bool EstCo
         {
             get { return _estCo; }
             set { _estCo = value; }
+        }
+
+        public string Nomutilisateur
+        {
+            get
+            {
+                return _nomutilisateur;
+            }
+
+            set
+            {
+                _nomutilisateur = value;
+            }
         }
 
         public Connexion(bool estCo)
@@ -46,9 +60,14 @@ namespace WF_Cartes
 
             if (uti.login() == true)
             {
-                MessageBox.Show("Connecté");
                 Form.ActiveForm.Close();
                 label3.Visible = false;
+                EstCo = true;
+
+                Nomutilisateur = uti.Nom;
+
+                tbxIdentifiant.Text="";
+                tbxMdp.Text = "";
             }
             else 
             {

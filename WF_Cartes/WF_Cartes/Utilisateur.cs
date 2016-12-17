@@ -24,14 +24,12 @@ namespace WF_Cartes
             set { _motDePasse = value; }
         }
 
-        public Utilisateur()
-            : this("", "")
+        public Utilisateur():this("", "")
         {
 
         }
 
-        public Utilisateur(string nom)
-            : this(nom, "")
+        public Utilisateur(string nom):this(nom, "")
         {
 
         }
@@ -45,16 +43,16 @@ namespace WF_Cartes
         public bool login()
         {
 
-            SQLiteConnection sqlconnection = new SQLiteConnection("Data Source= carte.db");
+            SQLiteConnection sqlconnection = new SQLiteConnection("Data Source = carte.db");
             sqlconnection.Open();
 
-            string CommandText = "SELECT * FROM Utilisateurs WHERE nomUtilisateur = '" + this.Nom + "' AND mdpUtilisateur = '" + this.Motdepasse + "'";
+            string CommandText = "SELECT * FROM utilisateur WHERE nom = '" + this.Nom + "' AND motDePasse = '" + this.Motdepasse + "'";
             SQLiteCommand cmd = new SQLiteCommand(CommandText, sqlconnection);
             SQLiteDataReader sqldr = cmd.ExecuteReader();
 
             while (sqldr.Read())
             {
-                if (sqldr["nomUtilisateur"].ToString() == this.Nom && sqldr["mdpUtilisateur"].ToString() == this.Motdepasse)
+                if (sqldr["nom"].ToString() == this.Nom && sqldr["motDePasse"].ToString() == this.Motdepasse)
                 {
                     return true;
                 }
@@ -62,20 +60,6 @@ namespace WF_Cartes
 
             sqlconnection.Close();
             return false;
-        }
-
-        public void nouvelUtilisateur()
-        {
-            SQLiteConnection sqlconnection = new SQLiteConnection("Data Source= carte.db");
-            sqlconnection.Open();
-
-            //INSERT INTO table VALUES ('valeur 1', 'valeur 2', ...)
-            //"insert into highscores (name, score) values ('Myself', 6000)";
-            string CommandText = "INSERT INTO Utilisateurs (nomUtilisateur, mdputilisateur) values ('" + this.Nom + "', '" + this.Motdepasse + "')";
-            SQLiteCommand cmd = new SQLiteCommand(CommandText, sqlconnection);
-            cmd.ExecuteNonQuery();
-
-            sqlconnection.Close();
         }
     }
 }

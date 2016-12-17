@@ -45,20 +45,22 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.tbxNom = new System.Windows.Forms.TextBox();
+            this.tbxCout = new System.Windows.Forms.TextBox();
+            this.tbxAttaque = new System.Windows.Forms.TextBox();
+            this.tbxVie = new System.Windows.Forms.TextBox();
+            this.tbxDescription = new System.Windows.Forms.TextBox();
+            this.tbxHistoire = new System.Windows.Forms.TextBox();
+            this.tbxRace = new System.Windows.Forms.TextBox();
+            this.tbxRarete = new System.Windows.Forms.TextBox();
+            this.tbxType = new System.Windows.Forms.TextBox();
+            this.tbxClasse = new System.Windows.Forms.TextBox();
+            this.tbxExtension = new System.Windows.Forms.TextBox();
+            this.btnSupprimer = new System.Windows.Forms.Button();
+            this.lblBvn = new System.Windows.Forms.Label();
+            this.btnAjouter = new System.Windows.Forms.Button();
+            this.btnModifier = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -68,7 +70,7 @@
             this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(984, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(743, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -109,6 +111,7 @@
             this.lsbCartes.Name = "lsbCartes";
             this.lsbCartes.Size = new System.Drawing.Size(249, 381);
             this.lsbCartes.TabIndex = 1;
+            this.lsbCartes.SelectedIndexChanged += new System.EventHandler(this.lsbCartes_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -209,122 +212,166 @@
             this.label12.TabIndex = 13;
             this.label12.Text = "Extension :";
             // 
-            // pictureBox1
+            // tbxNom
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(596, 54);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(317, 384);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
+            this.tbxNom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbxNom.Enabled = false;
+            this.tbxNom.Location = new System.Drawing.Point(416, 54);
+            this.tbxNom.Name = "tbxNom";
+            this.tbxNom.Size = new System.Drawing.Size(243, 20);
+            this.tbxNom.TabIndex = 16;
             // 
-            // textBox2
+            // tbxCout
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(416, 54);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(149, 20);
-            this.textBox2.TabIndex = 16;
+            this.tbxCout.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbxCout.Enabled = false;
+            this.tbxCout.Location = new System.Drawing.Point(416, 80);
+            this.tbxCout.Name = "tbxCout";
+            this.tbxCout.Size = new System.Drawing.Size(243, 20);
+            this.tbxCout.TabIndex = 18;
             // 
-            // textBox4
+            // tbxAttaque
             // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Location = new System.Drawing.Point(416, 80);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(149, 20);
-            this.textBox4.TabIndex = 18;
+            this.tbxAttaque.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbxAttaque.Enabled = false;
+            this.tbxAttaque.Location = new System.Drawing.Point(416, 105);
+            this.tbxAttaque.Name = "tbxAttaque";
+            this.tbxAttaque.Size = new System.Drawing.Size(243, 20);
+            this.tbxAttaque.TabIndex = 19;
             // 
-            // textBox5
+            // tbxVie
             // 
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Location = new System.Drawing.Point(416, 105);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(149, 20);
-            this.textBox5.TabIndex = 19;
+            this.tbxVie.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbxVie.Enabled = false;
+            this.tbxVie.Location = new System.Drawing.Point(416, 130);
+            this.tbxVie.Name = "tbxVie";
+            this.tbxVie.Size = new System.Drawing.Size(243, 20);
+            this.tbxVie.TabIndex = 20;
             // 
-            // textBox6
+            // tbxDescription
             // 
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox6.Location = new System.Drawing.Point(416, 130);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(149, 20);
-            this.textBox6.TabIndex = 20;
+            this.tbxDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbxDescription.Enabled = false;
+            this.tbxDescription.Location = new System.Drawing.Point(416, 180);
+            this.tbxDescription.Multiline = true;
+            this.tbxDescription.Name = "tbxDescription";
+            this.tbxDescription.Size = new System.Drawing.Size(243, 80);
+            this.tbxDescription.TabIndex = 22;
             // 
-            // textBox7
+            // tbxHistoire
             // 
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox7.Location = new System.Drawing.Point(416, 155);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(149, 20);
-            this.textBox7.TabIndex = 21;
+            this.tbxHistoire.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbxHistoire.Enabled = false;
+            this.tbxHistoire.Location = new System.Drawing.Point(416, 266);
+            this.tbxHistoire.Multiline = true;
+            this.tbxHistoire.Name = "tbxHistoire";
+            this.tbxHistoire.Size = new System.Drawing.Size(243, 71);
+            this.tbxHistoire.TabIndex = 23;
             // 
-            // textBox8
+            // tbxRace
             // 
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox8.Location = new System.Drawing.Point(416, 180);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(149, 80);
-            this.textBox8.TabIndex = 22;
+            this.tbxRace.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbxRace.Enabled = false;
+            this.tbxRace.Location = new System.Drawing.Point(416, 156);
+            this.tbxRace.Name = "tbxRace";
+            this.tbxRace.Size = new System.Drawing.Size(243, 20);
+            this.tbxRace.TabIndex = 24;
             // 
-            // textBox9
+            // tbxRarete
             // 
-            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox9.Location = new System.Drawing.Point(416, 266);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(149, 71);
-            this.textBox9.TabIndex = 23;
+            this.tbxRarete.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbxRarete.Enabled = false;
+            this.tbxRarete.Location = new System.Drawing.Point(416, 344);
+            this.tbxRarete.Name = "tbxRarete";
+            this.tbxRarete.Size = new System.Drawing.Size(243, 20);
+            this.tbxRarete.TabIndex = 25;
             // 
-            // textBox10
+            // tbxType
             // 
-            this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox10.Location = new System.Drawing.Point(416, 343);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(149, 20);
-            this.textBox10.TabIndex = 24;
+            this.tbxType.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbxType.Enabled = false;
+            this.tbxType.Location = new System.Drawing.Point(416, 369);
+            this.tbxType.Name = "tbxType";
+            this.tbxType.Size = new System.Drawing.Size(243, 20);
+            this.tbxType.TabIndex = 26;
             // 
-            // textBox11
+            // tbxClasse
             // 
-            this.textBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox11.Location = new System.Drawing.Point(416, 368);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(149, 20);
-            this.textBox11.TabIndex = 25;
+            this.tbxClasse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbxClasse.Enabled = false;
+            this.tbxClasse.Location = new System.Drawing.Point(416, 394);
+            this.tbxClasse.Name = "tbxClasse";
+            this.tbxClasse.Size = new System.Drawing.Size(243, 20);
+            this.tbxClasse.TabIndex = 27;
             // 
-            // textBox12
+            // tbxExtension
             // 
-            this.textBox12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox12.Location = new System.Drawing.Point(416, 393);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(149, 20);
-            this.textBox12.TabIndex = 26;
+            this.tbxExtension.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbxExtension.Enabled = false;
+            this.tbxExtension.Location = new System.Drawing.Point(416, 419);
+            this.tbxExtension.Name = "tbxExtension";
+            this.tbxExtension.Size = new System.Drawing.Size(243, 20);
+            this.tbxExtension.TabIndex = 28;
             // 
-            // textBox13
+            // btnSupprimer
             // 
-            this.textBox13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox13.Location = new System.Drawing.Point(416, 418);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(149, 20);
-            this.textBox13.TabIndex = 27;
+            this.btnSupprimer.Location = new System.Drawing.Point(68, 441);
+            this.btnSupprimer.Name = "btnSupprimer";
+            this.btnSupprimer.Size = new System.Drawing.Size(72, 23);
+            this.btnSupprimer.TabIndex = 29;
+            this.btnSupprimer.Text = "Supprimer";
+            this.btnSupprimer.UseVisualStyleBackColor = true;
+            this.btnSupprimer.Visible = false;
+            // 
+            // lblBvn
+            // 
+            this.lblBvn.AutoSize = true;
+            this.lblBvn.Location = new System.Drawing.Point(11, 32);
+            this.lblBvn.Name = "lblBvn";
+            this.lblBvn.Size = new System.Drawing.Size(35, 13);
+            this.lblBvn.TabIndex = 30;
+            this.lblBvn.Text = "label2";
+            // 
+            // btnAjouter
+            // 
+            this.btnAjouter.Location = new System.Drawing.Point(245, 441);
+            this.btnAjouter.Name = "btnAjouter";
+            this.btnAjouter.Size = new System.Drawing.Size(72, 23);
+            this.btnAjouter.TabIndex = 31;
+            this.btnAjouter.Text = "Ajouter";
+            this.btnAjouter.UseVisualStyleBackColor = true;
+            this.btnAjouter.Visible = false;
+            // 
+            // btnModifier
+            // 
+            this.btnModifier.Location = new System.Drawing.Point(157, 441);
+            this.btnModifier.Name = "btnModifier";
+            this.btnModifier.Size = new System.Drawing.Size(72, 23);
+            this.btnModifier.TabIndex = 32;
+            this.btnModifier.Text = "Modifier";
+            this.btnModifier.UseVisualStyleBackColor = true;
+            this.btnModifier.Visible = false;
             // 
             // FrmCarte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 524);
-            this.Controls.Add(this.textBox13);
-            this.Controls.Add(this.textBox12);
-            this.Controls.Add(this.textBox11);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(743, 489);
+            this.Controls.Add(this.btnModifier);
+            this.Controls.Add(this.btnAjouter);
+            this.Controls.Add(this.lblBvn);
+            this.Controls.Add(this.btnSupprimer);
+            this.Controls.Add(this.tbxExtension);
+            this.Controls.Add(this.tbxClasse);
+            this.Controls.Add(this.tbxType);
+            this.Controls.Add(this.tbxRarete);
+            this.Controls.Add(this.tbxRace);
+            this.Controls.Add(this.tbxHistoire);
+            this.Controls.Add(this.tbxDescription);
+            this.Controls.Add(this.tbxVie);
+            this.Controls.Add(this.tbxAttaque);
+            this.Controls.Add(this.tbxCout);
+            this.Controls.Add(this.tbxNom);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -343,7 +390,6 @@
             this.Text = "Cartes";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -368,18 +414,21 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox tbxNom;
+        private System.Windows.Forms.TextBox tbxCout;
+        private System.Windows.Forms.TextBox tbxAttaque;
+        private System.Windows.Forms.TextBox tbxVie;
+        private System.Windows.Forms.TextBox tbxDescription;
+        private System.Windows.Forms.TextBox tbxHistoire;
+        private System.Windows.Forms.TextBox tbxRace;
+        private System.Windows.Forms.TextBox tbxRarete;
+        private System.Windows.Forms.TextBox tbxType;
+        private System.Windows.Forms.TextBox tbxClasse;
+        private System.Windows.Forms.TextBox tbxExtension;
+        private System.Windows.Forms.Button btnSupprimer;
+        private System.Windows.Forms.Label lblBvn;
+        private System.Windows.Forms.Button btnAjouter;
+        private System.Windows.Forms.Button btnModifier;
     }
 }
 
