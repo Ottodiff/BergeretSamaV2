@@ -59,6 +59,8 @@ namespace WF_Cartes
             }
 
             sqlconnection.Close();
+            cmd.Dispose();
+            sqldr.Close();
             return false;
         }
     }

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace WF_Cartes
 {
-    public partial class Connexion : Form
+    public partial class FrmConnexion : Form
     {
         private bool _estCo;
         private string _nomutilisateur;
@@ -34,12 +34,12 @@ namespace WF_Cartes
             }
         }
 
-        public Connexion(bool estCo)
+        public FrmConnexion(bool estCo)
         {
             EstCo = estCo;
         }
 
-        public Connexion():this(false)
+        public FrmConnexion():this(false)
         {
             InitializeComponent();
         }

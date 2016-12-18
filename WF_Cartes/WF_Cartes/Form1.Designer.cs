@@ -329,9 +329,8 @@
             this.lblBvn.AutoSize = true;
             this.lblBvn.Location = new System.Drawing.Point(11, 32);
             this.lblBvn.Name = "lblBvn";
-            this.lblBvn.Size = new System.Drawing.Size(35, 13);
+            this.lblBvn.Size = new System.Drawing.Size(0, 13);
             this.lblBvn.TabIndex = 30;
-            this.lblBvn.Text = "label2";
             // 
             // btnAjouter
             // 
@@ -342,6 +341,7 @@
             this.btnAjouter.Text = "Ajouter";
             this.btnAjouter.UseVisualStyleBackColor = true;
             this.btnAjouter.Visible = false;
+            this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
             // 
             // btnModifier
             // 

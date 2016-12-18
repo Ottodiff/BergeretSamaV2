@@ -54,11 +54,11 @@
       <DependentUpon>APropos.cs</DependentUpon>
     </Compile>
     <Compile Include="Classe.cs" />
-    <Compile Include="Connexion.cs">
+    <Compile Include="FrmConnexion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Connexion.Designer.cs">
-      <DependentUpon>Connexion.cs</DependentUpon>
+    <Compile Include="FrmConnexion.Designer.cs">
+      <DependentUpon>FrmConnexion.cs</DependentUpon>
     </Compile>
     <Compile Include="Extension.cs" />
     <Compile Include="Form1.cs">
@@ -66,6 +66,12 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAjouter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAjouter.Designer.cs">
+      <DependentUpon>FrmAjouter.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -76,11 +82,14 @@
     <EmbeddedResource Include="APropos.resx">
       <DependentUpon>APropos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Connexion.resx">
-      <DependentUpon>Connexion.cs</DependentUpon>
+    <EmbeddedResource Include="FrmConnexion.resx">
+      <DependentUpon>FrmConnexion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAjouter.resx">
+      <DependentUpon>FrmAjouter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

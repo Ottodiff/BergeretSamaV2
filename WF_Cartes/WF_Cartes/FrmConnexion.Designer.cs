@@ -1,6 +1,6 @@
 ﻿namespace WF_Cartes
 {
-    partial class Connexion
+    partial class FrmConnexion
     {
         /// <summary>
         /// Required designer variable.

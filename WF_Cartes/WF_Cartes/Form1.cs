@@ -13,29 +13,39 @@ namespace WF_Cartes
 {
     public partial class FrmCarte : Form
     {
-        Connexion co = new Connexion();
+        FrmConnexion co = new FrmConnexion();
+        FrmAjouter aj = new FrmAjouter();
+
         Race ra = new Race();
         Classe cl = new Classe();
         Rarete rare = new Rarete();
         Type ty = new Type();
         Extension ex = new Extension();
 
+
+        SQLiteConnection sqlconnection = new SQLiteConnection("Data Source= carte.db");
+        string CommandText;
+        SQLiteCommand cmd;
+        SQLiteDataReader sqldr;
+
         string selectedCarte = null;
         public FrmCarte()
         {
             InitializeComponent();
 
-            SQLiteConnection sqlconnection = new SQLiteConnection("Data Source= carte.db");
             sqlconnection.Open();
 
-            string CommandText = "SELECT * FROM cartes";
-            SQLiteCommand cmd = new SQLiteCommand(CommandText, sqlconnection);
-            SQLiteDataReader sqldr = cmd.ExecuteReader();
+            CommandText = "SELECT * FROM cartes";
+            cmd = new SQLiteCommand(CommandText, sqlconnection);
+            sqldr = cmd.ExecuteReader();
 
             while (sqldr.Read())
             {
                 lsbCartes.Items.Add(sqldr["nom"]);
             }
+            sqldr.Close();
+            cmd.Dispose();
+            sqlconnection.Close();
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
@@ -53,6 +63,8 @@ namespace WF_Cartes
                 connexionToolStripMenuItem.Text = "Connexion";
 
                 lblBvn.Text = "";
+                btnAjouter.Visible = false;
+                btnModifier.Visible = false;
                 btnSupprimer.Visible = false;
             }
             else
@@ -63,6 +75,8 @@ namespace WF_Cartes
                     connexionToolStripMenuItem.Text = "Deconnexion";
 
                     lblBvn.Text = "Bienvenue " + co.Nomutilisateur;
+                    btnAjouter.Visible = true;
+                    btnModifier.Visible = true;
                     btnSupprimer.Visible = true;
                 }
             }
@@ -75,12 +89,11 @@ namespace WF_Cartes
 
         private void lsbCartes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SQLiteConnection sqlconnection = new SQLiteConnection("Data Source= carte.db");
             sqlconnection.Open();
 
-            string CommandText = "SELECT * FROM cartes WHERE nom = \"" + lsbCartes.SelectedItem  + "\"";
-            SQLiteCommand cmd = new SQLiteCommand(CommandText, sqlconnection);
-            SQLiteDataReader sqldr = cmd.ExecuteReader();
+            CommandText = "SELECT * FROM cartes WHERE nom = \"" + lsbCartes.SelectedItem  + "\"";
+            cmd = new SQLiteCommand(CommandText, sqlconnection);
+            sqldr = cmd.ExecuteReader();
 
             while (sqldr.Read())
             {
@@ -98,6 +111,10 @@ namespace WF_Cartes
                 ex.IdExtension = sqldr["idExtension"].ToString();
             }
 
+            sqldr.Close();
+            cmd.Dispose();
+            sqlconnection.Close();
+
             tbxRace.Text = ra.raceSelect();
             tbxClasse.Text = cl.classeSelect();
             tbxRarete.Text = rare.rareteSelect();
@@ -108,6 +125,11 @@ namespace WF_Cartes
         private void btnSupprimer_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAjouter_Click(object sender, EventArgs e)
+        {
+            aj.ShowDialog();
         }
     }
 }
