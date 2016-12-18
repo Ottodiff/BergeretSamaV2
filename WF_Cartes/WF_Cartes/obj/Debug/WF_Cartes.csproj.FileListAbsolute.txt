@@ -1,0 +1,14 @@
+C:\Users\Christophe\Documents\GitHub\BergeretSamaV2\WF_Cartes\WF_Cartes\bin\Debug\WF_Cartes.exe.config
+C:\Users\Christophe\Documents\GitHub\BergeretSamaV2\WF_Cartes\WF_Cartes\bin\Debug\WF_Cartes.exe
+C:\Users\Christophe\Documents\GitHub\BergeretSamaV2\WF_Cartes\WF_Cartes\bin\Debug\WF_Cartes.pdb
+C:\Users\Christophe\Documents\GitHub\BergeretSamaV2\WF_Cartes\WF_Cartes\bin\Debug\System.Data.SQLite.dll
+C:\Users\Christophe\Documents\GitHub\BergeretSamaV2\WF_Cartes\WF_Cartes\bin\Debug\System.Data.SQLite.xml
+C:\Users\Christophe\Documents\GitHub\BergeretSamaV2\WF_Cartes\WF_Cartes\obj\Debug\WF_Cartes.csprojResolveAssemblyReference.cache
+C:\Users\Christophe\Documents\GitHub\BergeretSamaV2\WF_Cartes\WF_Cartes\obj\Debug\WF_Cartes.APropos.resources
+C:\Users\Christophe\Documents\GitHub\BergeretSamaV2\WF_Cartes\WF_Cartes\obj\Debug\WF_Cartes.FrmCarte.resources
+C:\Users\Christophe\Documents\GitHub\BergeretSamaV2\WF_Cartes\WF_Cartes\obj\Debug\WF_Cartes.Properties.Resources.resources
+C:\Users\Christophe\Documents\GitHub\BergeretSamaV2\WF_Cartes\WF_Cartes\obj\Debug\WF_Cartes.csproj.GenerateResource.Cache
+C:\Users\Christophe\Documents\GitHub\BergeretSamaV2\WF_Cartes\WF_Cartes\obj\Debug\WF_Cartes.exe
+C:\Users\Christophe\Documents\GitHub\BergeretSamaV2\WF_Cartes\WF_Cartes\obj\Debug\WF_Cartes.pdb
+C:\Users\Christophe\Documents\GitHub\BergeretSamaV2\WF_Cartes\WF_Cartes\obj\Debug\WF_Cartes.FrmConnexion.resources
+C:\Users\Christophe\Documents\GitHub\BergeretSamaV2\WF_Cartes\WF_Cartes\obj\Debug\WF_Cartes.FrmAjouter.resources
