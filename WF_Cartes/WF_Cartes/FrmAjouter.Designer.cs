@@ -299,6 +299,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmAjouter";
             this.Text = "Ajouter une carte";
+            this.Load += new System.EventHandler(this.FrmAjouter_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudCout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAttaque)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudVie)).EndInit();

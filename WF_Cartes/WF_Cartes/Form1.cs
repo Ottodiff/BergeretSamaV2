@@ -14,7 +14,6 @@ namespace WF_Cartes
     public partial class FrmCarte : Form
     {
         FrmConnexion co = new FrmConnexion();
-        FrmAjouter aj = new FrmAjouter();
 
         Race ra = new Race();
         Classe cl = new Classe();
@@ -129,7 +128,31 @@ namespace WF_Cartes
 
         private void btnAjouter_Click(object sender, EventArgs e)
         {
+            FrmAjouter aj = new FrmAjouter();
             aj.ShowDialog();
+
+            
+        }
+
+        private void btnModifier_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnWhat_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                sqlconnection.Close();
+                Console.WriteLine("justclose");
+            }
+            catch (Exception)
+            {
+                sqlconnection.Open();
+                Console.WriteLine("done");
+                sqlconnection.Close();
+                throw;
+            }
         }
     }
 }

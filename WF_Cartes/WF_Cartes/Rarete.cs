@@ -52,6 +52,8 @@ namespace WF_Cartes
                 this.Raretes = ((string)sqldr["raretes"]);
             }
 
+            sqlconnection.Close();
+
             return this.Raretes;
         }
     }

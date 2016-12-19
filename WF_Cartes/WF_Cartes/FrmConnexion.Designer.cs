@@ -101,8 +101,9 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Identifiant : ";
             // 
-            // Connexion
+            // FrmConnexion
             // 
+            this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 160);
@@ -113,7 +114,7 @@
             this.Controls.Add(this.tbxIdentifiant);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Connexion";
+            this.Name = "FrmConnexion";
             this.Text = "connexion";
             this.ResumeLayout(false);
             this.PerformLayout();

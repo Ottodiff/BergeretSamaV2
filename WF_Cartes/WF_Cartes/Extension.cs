@@ -52,6 +52,8 @@ namespace WF_Cartes
                 this.Extensions = ((string)sqldr["extensions"]);
             }
 
+            sqlconnection.Close();
+
             return this.Extensions;
         }
     }

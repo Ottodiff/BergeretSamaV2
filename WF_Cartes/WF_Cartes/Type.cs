@@ -52,6 +52,8 @@ namespace WF_Cartes
                 this.Types = ((string)sqldr["types"]);
             }
 
+            sqlconnection.Close();
+
             return this.Types;
         }
     }

@@ -52,6 +52,8 @@ namespace WF_Cartes
                this.Races = ((string)sqldr["races"]);
             }
 
+            sqlconnection.Close();
+
             return this.Races;
         }
     }

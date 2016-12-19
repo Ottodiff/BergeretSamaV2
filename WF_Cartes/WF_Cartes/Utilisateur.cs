@@ -42,7 +42,6 @@ namespace WF_Cartes
 
         public bool login()
         {
-
             SQLiteConnection sqlconnection = new SQLiteConnection("Data Source = carte.db");
             sqlconnection.Open();
 
@@ -54,13 +53,16 @@ namespace WF_Cartes
             {
                 if (sqldr["nom"].ToString() == this.Nom && sqldr["motDePasse"].ToString() == this.Motdepasse)
                 {
+                    cmd.Dispose();
+                    sqldr.Close();
+                    sqlconnection.Close();
                     return true;
                 }
             }
 
-            sqlconnection.Close();
             cmd.Dispose();
             sqldr.Close();
+            sqlconnection.Close();
             return false;
         }
     }
