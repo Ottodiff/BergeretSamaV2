@@ -13,7 +13,7 @@ namespace WF_Cartes
 {
     public partial class FrmCarte : Form
     {
-        FrmConnexion co = new FrmConnexion();
+        FrmConnexion co;
 
         Race ra = new Race();
         Classe cl = new Classe();
@@ -31,6 +31,12 @@ namespace WF_Cartes
         public FrmCarte()
         {
             InitializeComponent();
+            refreshCarte();
+        }
+
+        public void refreshCarte()
+        {
+            lsbCartes.Items.Clear();
 
             sqlconnection.Open();
 
@@ -56,6 +62,8 @@ namespace WF_Cartes
 
         private void connexionToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            co = new FrmConnexion();
+
             if (co.EstCo == true)
             {
                 co.EstCo = false;
@@ -90,7 +98,7 @@ namespace WF_Cartes
         {
             sqlconnection.Open();
 
-            CommandText = "SELECT * FROM cartes WHERE nom = \"" + lsbCartes.SelectedItem  + "\"";
+            CommandText = "SELECT * FROM cartes WHERE nom = \"" + lsbCartes.SelectedItem + "\"";
             cmd = new SQLiteCommand(CommandText, sqlconnection);
             sqldr = cmd.ExecuteReader();
 
@@ -123,6 +131,38 @@ namespace WF_Cartes
 
         private void btnSupprimer_Click(object sender, EventArgs e)
         {
+            if (lsbCartes.SelectedIndex >= 0)
+            {
+                sqlconnection.Open();
+
+                CommandText = "DELETE FROM cartes WHERE nom =\"" + lsbCartes.SelectedItem + "\"";
+                cmd = new SQLiteCommand(CommandText, sqlconnection);
+
+                cmd.ExecuteNonQuery();
+
+                cmd.Dispose();
+                sqlconnection.Close();
+
+
+                MessageBox.Show("Carte supprimée succès!");
+
+                refreshCarte();
+                tbxNom.Text = "";
+                tbxCout.Text = "";
+                tbxAttaque.Text = "";
+                tbxVie.Text = "";
+                tbxRace.Text = "";
+                tbxDescription.Text = "";
+                tbxHistoire.Text = "";
+                tbxClasse.Text = "";
+                tbxRarete.Text = "";
+                tbxType.Text = "";
+                tbxExtension.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Veuillez choisir une carte pour la supprimer.");
+            }
 
         }
 
@@ -130,29 +170,15 @@ namespace WF_Cartes
         {
             FrmAjouter aj = new FrmAjouter();
             aj.ShowDialog();
+            if (aj.FormClosed)
+            {
 
-            
+            }
         }
 
         private void btnModifier_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void btnWhat_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                sqlconnection.Close();
-                Console.WriteLine("justclose");
-            }
-            catch (Exception)
-            {
-                sqlconnection.Open();
-                Console.WriteLine("done");
-                sqlconnection.Close();
-                throw;
-            }
         }
     }
 }

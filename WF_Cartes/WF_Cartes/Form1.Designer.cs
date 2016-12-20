@@ -60,7 +60,6 @@
             this.lblBvn = new System.Windows.Forms.Label();
             this.btnAjouter = new System.Windows.Forms.Button();
             this.btnModifier = new System.Windows.Forms.Button();
-            this.btnWhat = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -322,7 +321,6 @@
             this.btnSupprimer.TabIndex = 29;
             this.btnSupprimer.Text = "Supprimer";
             this.btnSupprimer.UseVisualStyleBackColor = true;
-            this.btnSupprimer.Visible = false;
             this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
             // 
             // lblBvn
@@ -341,7 +339,6 @@
             this.btnAjouter.TabIndex = 31;
             this.btnAjouter.Text = "Ajouter";
             this.btnAjouter.UseVisualStyleBackColor = true;
-            this.btnAjouter.Visible = false;
             this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
             // 
             // btnModifier
@@ -352,25 +349,13 @@
             this.btnModifier.TabIndex = 32;
             this.btnModifier.Text = "Modifier";
             this.btnModifier.UseVisualStyleBackColor = true;
-            this.btnModifier.Visible = false;
             this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
-            // 
-            // btnWhat
-            // 
-            this.btnWhat.Location = new System.Drawing.Point(347, 454);
-            this.btnWhat.Name = "btnWhat";
-            this.btnWhat.Size = new System.Drawing.Size(72, 23);
-            this.btnWhat.TabIndex = 33;
-            this.btnWhat.Text = "What";
-            this.btnWhat.UseVisualStyleBackColor = true;
-            this.btnWhat.Click += new System.EventHandler(this.btnWhat_Click);
             // 
             // FrmCarte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(743, 489);
-            this.Controls.Add(this.btnWhat);
             this.Controls.Add(this.btnModifier);
             this.Controls.Add(this.btnAjouter);
             this.Controls.Add(this.lblBvn);
@@ -443,7 +428,6 @@
         private System.Windows.Forms.Label lblBvn;
         private System.Windows.Forms.Button btnAjouter;
         private System.Windows.Forms.Button btnModifier;
-        private System.Windows.Forms.Button btnWhat;
     }
 }
 

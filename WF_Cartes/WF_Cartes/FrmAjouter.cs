@@ -14,6 +14,11 @@ namespace WF_Cartes
     public partial class FrmAjouter : Form
     {
 
+        SQLiteConnection sqlconnection = new SQLiteConnection("Data Source=carte.db");
+        string CommandText;
+        SQLiteCommand cmd;
+        SQLiteDataReader sqldr;
+
         public FrmAjouter()
         {
             InitializeComponent();
@@ -23,14 +28,12 @@ namespace WF_Cartes
 
         public void Charge()
         {
-            SQLiteConnection sqlconnection = new SQLiteConnection("Data Source=carte.db");
-
             sqlconnection.Open();
 
             //race
-            string CommandText = "SELECT races FROM race";
-            SQLiteCommand cmd = new SQLiteCommand(CommandText, sqlconnection);
-            SQLiteDataReader sqldr = cmd.ExecuteReader();
+            CommandText = "SELECT races FROM race";
+            cmd = new SQLiteCommand(CommandText, sqlconnection);
+            sqldr = cmd.ExecuteReader();
 
             while (sqldr.Read())
             {
@@ -80,28 +83,35 @@ namespace WF_Cartes
             cmd.Dispose();
             sqldr.Close();
             sqlconnection.Close();
-
-            sqlconnection = null;
         }
 
         private void btnValider_Click(object sender, EventArgs e)
         {
-            SQLiteConnection sqlconnection = new SQLiteConnection("Data Source= carte.db");
-
             if ((tbxNom.Text != "") && (tbxDescription.Text != "") && (tbxHistoire.Text != "") && (cbxRace.SelectedIndex != -1) && (cbxRarete.SelectedIndex != -1) && (cbxClasse.SelectedIndex != -1) && (cbxType.SelectedIndex != -1) && (cbxExtension.SelectedIndex != -1))
             {
                 sqlconnection.Open();
 
-                string CommandText = "INSERT INTO cartes VALUES(null,\"" + tbxNom.Text + "\",\"" + nudCout.Value + "\",\"" + nudAttaque.Value + "\",\"" + nudVie.Value + "\",\"" + tbxDescription.Text + "\",\"" + tbxHistoire.Text + "\"," + (cbxRace.SelectedIndex + 1) + "," + (cbxRarete.SelectedIndex + 1) + "," + (cbxClasse.SelectedIndex + 1) + "," + (cbxType.SelectedIndex + 1) + "," + (cbxExtension.SelectedIndex + 1) + ")";
+                try
+                {
+                    CommandText = "INSERT INTO cartes VALUES(null,\"" + tbxNom.Text + "\",\"" + nudCout.Value + "\",\"" + nudAttaque.Value + "\",\"" + nudVie.Value + "\",\"" + tbxDescription.Text + "\",\"" + tbxHistoire.Text + "\"," + (cbxRace.SelectedIndex + 1) + "," + (cbxRarete.SelectedIndex + 1) + "," + (cbxClasse.SelectedIndex + 1) + "," + (cbxType.SelectedIndex + 1) + "," + (cbxExtension.SelectedIndex + 1) + ")";
+                    cmd = new SQLiteCommand(CommandText, sqlconnection);
 
-                SQLiteCommand cmd = new SQLiteCommand(CommandText, sqlconnection);
 
-                cmd.CommandTimeout = 4;
+                    cmd.ExecuteNonQuery();
 
-                cmd.ExecuteNonQuery();
+                    cmd.Dispose();
+                    sqlconnection.Close();
 
-                cmd.Dispose();
-                sqlconnection.Close();
+                    MessageBox.Show("Carte ajoutée avec succès!");
+
+                    this.Close();
+                }
+                catch(System.Data.SQLite.SQLiteException)
+                {
+                    sqlconnection.Close();
+
+                    MessageBox.Show("Veuillez nommer votre carte différemment");
+                }
             }
             else
             {
@@ -112,11 +122,6 @@ namespace WF_Cartes
         private void btnAnnuler_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void FrmAjouter_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
