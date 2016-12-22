@@ -15,6 +15,7 @@ namespace WF_Cartes
     {
         //declaration frms
         FrmConnexion co = new FrmConnexion();
+        FrmModifier mo;
 
         //declaration classes
         Race ra = new Race();
@@ -122,8 +123,6 @@ namespace WF_Cartes
 
         private void lsbCartes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            _nomCarte = (string)lsbCartes.SelectedItem;
-
             sqlconnection.Open();
 
             CommandText = "SELECT * FROM cartes WHERE nom = \"" + lsbCartes.SelectedItem + "\"";
@@ -206,7 +205,9 @@ namespace WF_Cartes
 
         private void btnModifier_Click(object sender, EventArgs e)
         {
-            FrmModifier mo = new FrmModifier();
+            mo = new FrmModifier();
+            mo.Charge(tbxNom.Text);
+
             DialogResult result = mo.ShowDialog();
 
             if(result == DialogResult.OK)

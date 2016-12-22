@@ -77,10 +77,5 @@ namespace WF_Cartes
                 tbxMdp.Focus();
             }
         }
-
-        private void btnAnnuler_Click_1(object sender, EventArgs e)
-        {
-            Form.ActiveForm.Close();
-        }
     }
 }

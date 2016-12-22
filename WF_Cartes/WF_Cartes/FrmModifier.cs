@@ -20,16 +20,25 @@ namespace WF_Cartes
         SQLiteCommand cmd;
         SQLiteDataReader sqldr;
 
+        public string Nom
+        {
+            get { return tbxNom.Text;   }
+            set { tbxNom.Text = value;  } 
+        }
+
+
+
+
         public FrmModifier()
         {
             InitializeComponent();
-
-            Charge();
         }
 
-        public void Charge()
+        public void Charge(string nom)
         {
             sqlconnection.Open();
+
+            this.Nom = nom;
 
             //race
             CommandText = "SELECT races FROM race";
@@ -79,6 +88,20 @@ namespace WF_Cartes
             while (sqldr.Read())
             {
                 cbxExtension.Items.Add(sqldr["extensions"]);
+            }
+
+            //charge info carte
+            CommandText = "SELECT * FROM cartes as ca, race as ra, classe as cla, extension as ex, rarete as rar, type as ty  WHERE ca.idRace = ra.idRace  AND ca.idClasse = cla.idClasse AND ca.idExtension = ex.idExtension AND ca.idRarete = rar.idRarete AND ca.idType = ty.idType AND nom = \"" + Nom + "\"";
+            cmd = new SQLiteCommand(CommandText, sqlconnection);
+            sqldr = cmd.ExecuteReader();
+
+            while (sqldr.Read())
+            {
+                tbxNom.Text = (string)sqldr["nom"];
+                nudCout.Value = Convert.ToInt32(sqldr["cout"]);
+                nudAttaque.Value = Convert.ToInt32(sqldr["attaque"]);
+                nudVie.Value = Convert.ToInt32(sqldr["vie"]);
+                cbxRace.SelectedItem = (string)sqldr["races"];
             }
 
             cmd.Dispose();
