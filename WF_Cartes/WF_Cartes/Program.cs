@@ -1,4 +1,13 @@
-﻿using System;
+﻿/******************************************
+* Projet : DB_Cartes
+* Description : Application gérant des cartes dans une base de données SQLite
+* Date : 23.09.2016
+* Version : 1.0
+* Auteur : SADOWSKI Christophe
+* Fichier : Program.cs 
+* *****************************************/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;

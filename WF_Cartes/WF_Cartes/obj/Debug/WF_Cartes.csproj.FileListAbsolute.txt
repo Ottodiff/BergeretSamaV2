@@ -59,3 +59,4 @@ C:\Users\SADOWSKIC_INFO\Documents\GitHub\BergeretSamaV2\WF_Cartes\WF_Cartes\obj\
 C:\Users\SADOWSKIC_INFO\Documents\GitHub\BergeretSamaV2\WF_Cartes\WF_Cartes\obj\Debug\WF_Cartes.FrmModifier.resources
 C:\Users\SADOWSKIC_INFO\Documents\GitHub\BergeretSamaV2\WF_Cartes\WF_Cartes\obj\Debug\WF_Cartes.Properties.Resources.resources
 C:\Users\SADOWSKIC_INFO\Documents\GitHub\BergeretSamaV2\WF_Cartes\WF_Cartes\obj\Debug\WF_Cartes.csproj.GenerateResource.Cache
+C:\Users\Christophe\Documents\GitHub\BergeretSamaV2\WF_Cartes\WF_Cartes\obj\Debug\WF_Cartes.FrmModifier.resources
