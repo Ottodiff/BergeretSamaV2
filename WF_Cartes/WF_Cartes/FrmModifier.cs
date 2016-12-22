@@ -11,15 +11,16 @@ using System.Data.SQLite;
 
 namespace WF_Cartes
 {
-    public partial class FrmAjouter : Form
+    public partial class FrmModifier : Form
     {
+        FrmCarte ca = new FrmCarte();
 
         SQLiteConnection sqlconnection = new SQLiteConnection("Data Source=carte.db");
         string CommandText;
         SQLiteCommand cmd;
         SQLiteDataReader sqldr;
 
-        public FrmAjouter()
+        public FrmModifier()
         {
             InitializeComponent();
 
@@ -87,52 +88,7 @@ namespace WF_Cartes
 
         private void btnValider_Click(object sender, EventArgs e)
         {
-            string nom = "";
-
-            if ((tbxNom.Text != "") && (tbxDescription.Text != "") && (tbxHistoire.Text != "") && (cbxRace.SelectedIndex != -1) && (cbxRarete.SelectedIndex != -1) && (cbxClasse.SelectedIndex != -1) && (cbxType.SelectedIndex != -1) && (cbxExtension.SelectedIndex != -1))
-            {
-                sqlconnection.Open();
-
-                string oldstring = tbxNom.Text;
-                string newstring = oldstring[0].ToString().ToUpper() + oldstring.Substring(1).ToLower();
-
-                CommandText = "SELECT nom FROM cartes WHERE nom = \"" + newstring + "\"";
-                cmd = new SQLiteCommand(CommandText, sqlconnection);
-                sqldr = cmd.ExecuteReader();
-
-                while (sqldr.Read())
-                {
-                    nom = (string)sqldr["nom"];
-                }
-
-                if(nom == "")
-                {
-                    CommandText = "INSERT INTO cartes VALUES(null,\"" + newstring + "\",\"" + nudCout.Value + "\",\"" + nudAttaque.Value + "\",\"" + nudVie.Value + "\",\"" + tbxDescription.Text + "\",\"" + tbxHistoire.Text + "\"," + (cbxRace.SelectedIndex + 1) + "," + (cbxRarete.SelectedIndex + 1) + "," + (cbxClasse.SelectedIndex + 1) + "," + (cbxType.SelectedIndex + 1) + "," + (cbxExtension.SelectedIndex + 1) + ")";
-                    cmd = new SQLiteCommand(CommandText, sqlconnection);
-
-
-                    cmd.ExecuteNonQuery();
-
-                    cmd.Dispose();
-                    sqlconnection.Close();
-
-                    MessageBox.Show("Carte ajoutée avec succès!");
-
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
-                }
-                else
-                {
-                    sqlconnection.Close();
-
-                    MessageBox.Show("Veuillez nommer votre carte différemment");
-
-                }
-            }
-            else
-            {
-                MessageBox.Show("Il manque des champs à remplir ou des informations complémentaire à choisir.");
-            }
+            
         }
 
         private void btnAnnuler_Click(object sender, EventArgs e)

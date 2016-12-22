@@ -61,17 +61,23 @@
       <DependentUpon>FrmConnexion.cs</DependentUpon>
     </Compile>
     <Compile Include="Extension.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="FrmCarte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FrmCarte.Designer.cs">
+      <DependentUpon>FrmCarte.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmAjouter.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmAjouter.Designer.cs">
       <DependentUpon>FrmAjouter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModifier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModifier.Designer.cs">
+      <DependentUpon>FrmModifier.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -85,11 +91,14 @@
     <EmbeddedResource Include="FrmConnexion.resx">
       <DependentUpon>FrmConnexion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="FrmCarte.resx">
+      <DependentUpon>FrmCarte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAjouter.resx">
       <DependentUpon>FrmAjouter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModifier.resx">
+      <DependentUpon>FrmModifier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

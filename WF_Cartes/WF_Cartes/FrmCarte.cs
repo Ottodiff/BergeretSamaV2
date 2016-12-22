@@ -13,33 +13,60 @@ namespace WF_Cartes
 {
     public partial class FrmCarte : Form
     {
-        FrmConnexion co;
+        //declaration frms
+        FrmConnexion co = new FrmConnexion();
 
+        //declaration classes
         Race ra = new Race();
         Classe cl = new Classe();
         Rarete rare = new Rarete();
         Type ty = new Type();
         Extension ex = new Extension();
 
-
+        //declaration bases de donnees
         SQLiteConnection sqlconnection = new SQLiteConnection("Data Source= carte.db");
         string CommandText;
         SQLiteCommand cmd;
         SQLiteDataReader sqldr;
 
+        //declaration variables
         string selectedCarte = null;
+        private string _nomCarte;
+
+        //geter/seter
+        public string NomCarte
+        {
+            get
+            {
+                return _nomCarte;
+            }
+
+            set
+            {
+                _nomCarte = value;
+            }
+        }
+
         public FrmCarte()
         {
             InitializeComponent();
+            
+            //affiche les cartes dans la listbox
             refreshCarte();
         }
 
+        /// <summary>
+        /// rafraichie la listbox avec les cartes de la base de donnees
+        /// </summary>
         public void refreshCarte()
         {
+            //vide la listbox
             lsbCartes.Items.Clear();
 
+            //ouvre la connection a la base de donnees
             sqlconnection.Open();
 
+            //
             CommandText = "SELECT * FROM cartes";
             cmd = new SQLiteCommand(CommandText, sqlconnection);
             sqldr = cmd.ExecuteReader();
@@ -48,6 +75,7 @@ namespace WF_Cartes
             {
                 lsbCartes.Items.Add(sqldr["nom"]);
             }
+
             sqldr.Close();
             cmd.Dispose();
             sqlconnection.Close();
@@ -62,8 +90,6 @@ namespace WF_Cartes
 
         private void connexionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            co = new FrmConnexion();
-
             if (co.EstCo == true)
             {
                 co.EstCo = false;
@@ -96,6 +122,8 @@ namespace WF_Cartes
 
         private void lsbCartes_SelectedIndexChanged(object sender, EventArgs e)
         {
+            _nomCarte = (string)lsbCartes.SelectedItem;
+
             sqlconnection.Open();
 
             CommandText = "SELECT * FROM cartes WHERE nom = \"" + lsbCartes.SelectedItem + "\"";
@@ -144,7 +172,7 @@ namespace WF_Cartes
                 sqlconnection.Close();
 
 
-                MessageBox.Show("Carte supprimée succès!");
+                MessageBox.Show("Carte supprimée avec succès!");
 
                 refreshCarte();
                 tbxNom.Text = "";
@@ -163,22 +191,28 @@ namespace WF_Cartes
             {
                 MessageBox.Show("Veuillez choisir une carte pour la supprimer.");
             }
-
         }
 
         private void btnAjouter_Click(object sender, EventArgs e)
         {
             FrmAjouter aj = new FrmAjouter();
-            aj.ShowDialog();
-            if (aj.FormClosed)
-            {
+            DialogResult result = aj.ShowDialog();
 
+            if (result == DialogResult.OK)
+            {
+                refreshCarte();
             }
         }
 
         private void btnModifier_Click(object sender, EventArgs e)
         {
+            FrmModifier mo = new FrmModifier();
+            DialogResult result = mo.ShowDialog();
 
+            if(result == DialogResult.OK)
+            {
+                refreshCarte();
+            }
         }
     }
 }

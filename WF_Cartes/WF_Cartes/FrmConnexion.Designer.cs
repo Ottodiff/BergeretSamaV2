@@ -50,10 +50,11 @@
             // 
             // btnAnnuler
             // 
+            this.btnAnnuler.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnAnnuler.Location = new System.Drawing.Point(57, 107);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(75, 23);
-            this.btnAnnuler.TabIndex = 12;
+            this.btnAnnuler.TabIndex = 3;
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = true;
             this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click_1);
@@ -63,7 +64,7 @@
             this.btnOK.Location = new System.Drawing.Point(147, 107);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
-            this.btnOK.TabIndex = 11;
+            this.btnOK.TabIndex = 2;
             this.btnOK.Text = "ok";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
@@ -74,14 +75,14 @@
             this.tbxMdp.Name = "tbxMdp";
             this.tbxMdp.PasswordChar = '*';
             this.tbxMdp.Size = new System.Drawing.Size(100, 20);
-            this.tbxMdp.TabIndex = 10;
+            this.tbxMdp.TabIndex = 1;
             // 
             // tbxIdentifiant
             // 
             this.tbxIdentifiant.Location = new System.Drawing.Point(122, 21);
             this.tbxIdentifiant.Name = "tbxIdentifiant";
             this.tbxIdentifiant.Size = new System.Drawing.Size(100, 20);
-            this.tbxIdentifiant.TabIndex = 9;
+            this.tbxIdentifiant.TabIndex = 0;
             // 
             // label2
             // 
@@ -106,6 +107,7 @@
             this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnAnnuler;
             this.ClientSize = new System.Drawing.Size(284, 160);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnAnnuler);

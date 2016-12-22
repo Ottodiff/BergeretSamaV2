@@ -318,9 +318,10 @@
             this.btnSupprimer.Location = new System.Drawing.Point(68, 441);
             this.btnSupprimer.Name = "btnSupprimer";
             this.btnSupprimer.Size = new System.Drawing.Size(72, 23);
-            this.btnSupprimer.TabIndex = 29;
+            this.btnSupprimer.TabIndex = 4;
             this.btnSupprimer.Text = "Supprimer";
             this.btnSupprimer.UseVisualStyleBackColor = true;
+            this.btnSupprimer.Visible = false;
             this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
             // 
             // lblBvn
@@ -336,9 +337,10 @@
             this.btnAjouter.Location = new System.Drawing.Point(245, 441);
             this.btnAjouter.Name = "btnAjouter";
             this.btnAjouter.Size = new System.Drawing.Size(72, 23);
-            this.btnAjouter.TabIndex = 31;
+            this.btnAjouter.TabIndex = 2;
             this.btnAjouter.Text = "Ajouter";
             this.btnAjouter.UseVisualStyleBackColor = true;
+            this.btnAjouter.Visible = false;
             this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
             // 
             // btnModifier
@@ -346,9 +348,10 @@
             this.btnModifier.Location = new System.Drawing.Point(157, 441);
             this.btnModifier.Name = "btnModifier";
             this.btnModifier.Size = new System.Drawing.Size(72, 23);
-            this.btnModifier.TabIndex = 32;
+            this.btnModifier.TabIndex = 3;
             this.btnModifier.Text = "Modifier";
             this.btnModifier.UseVisualStyleBackColor = true;
+            this.btnModifier.Visible = false;
             this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
             // 
             // FrmCarte
