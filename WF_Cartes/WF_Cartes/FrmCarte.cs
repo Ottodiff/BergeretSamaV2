@@ -76,6 +76,7 @@ namespace WF_Cartes
                 btnAjouter.Visible = false;
                 btnModifier.Visible = false;
                 btnSupprimer.Visible = false;
+                cartesToolStripMenuItem.Visible = false;
             }
             //si on est pas co
             else
@@ -93,6 +94,7 @@ namespace WF_Cartes
                     btnAjouter.Visible = true;
                     btnModifier.Visible = true;
                     btnSupprimer.Visible = true;
+                    cartesToolStripMenuItem.Visible = true;
                 }
             }
         }
@@ -220,6 +222,27 @@ namespace WF_Cartes
             }
         }
 
+        //ajouter
+        private void ajouterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //appelle le contenu du bouton ajouter
+            btnAjouter.PerformClick();
+        }
+
+        //modifier
+        private void modifierToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //appelle le contenu du bouton modifier
+            btnModifier.PerformClick();
+        }
+
+        //supprimer
+        private void supprimerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //appelle le contenu du bouton supprimer
+            btnSupprimer.PerformClick();
+        }
+
         /// <summary>
         /// rafraichie la listbox avec les cartes de la base de donnees
         /// </summary>
@@ -267,6 +290,5 @@ namespace WF_Cartes
             tbxType.Text = "";
             tbxExtension.Text = "";
         }
-
     }
 }

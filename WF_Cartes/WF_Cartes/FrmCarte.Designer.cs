@@ -60,6 +60,10 @@
             this.lblBvn = new System.Windows.Forms.Label();
             this.btnAjouter = new System.Windows.Forms.Button();
             this.btnModifier = new System.Windows.Forms.Button();
+            this.cartesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ajouterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modifierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.supprimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,6 +71,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fichierToolStripMenuItem,
+            this.cartesToolStripMenuItem,
             this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -86,14 +91,14 @@
             // connexionToolStripMenuItem
             // 
             this.connexionToolStripMenuItem.Name = "connexionToolStripMenuItem";
-            this.connexionToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.connexionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.connexionToolStripMenuItem.Text = "Connexion";
             this.connexionToolStripMenuItem.Click += new System.EventHandler(this.connexionToolStripMenuItem_Click);
             // 
             // quitterToolStripMenuItem
             // 
             this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
-            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.quitterToolStripMenuItem.Text = "Quitter";
             this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
             // 
@@ -354,6 +359,38 @@
             this.btnModifier.Visible = false;
             this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
             // 
+            // cartesToolStripMenuItem
+            // 
+            this.cartesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ajouterToolStripMenuItem,
+            this.modifierToolStripMenuItem,
+            this.supprimerToolStripMenuItem});
+            this.cartesToolStripMenuItem.Name = "cartesToolStripMenuItem";
+            this.cartesToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.cartesToolStripMenuItem.Text = "Cartes";
+            this.cartesToolStripMenuItem.Visible = false;
+            // 
+            // ajouterToolStripMenuItem
+            // 
+            this.ajouterToolStripMenuItem.Name = "ajouterToolStripMenuItem";
+            this.ajouterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ajouterToolStripMenuItem.Text = "Ajouter";
+            this.ajouterToolStripMenuItem.Click += new System.EventHandler(this.ajouterToolStripMenuItem_Click);
+            // 
+            // modifierToolStripMenuItem
+            // 
+            this.modifierToolStripMenuItem.Name = "modifierToolStripMenuItem";
+            this.modifierToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.modifierToolStripMenuItem.Text = "Modifier";
+            this.modifierToolStripMenuItem.Click += new System.EventHandler(this.modifierToolStripMenuItem_Click);
+            // 
+            // supprimerToolStripMenuItem
+            // 
+            this.supprimerToolStripMenuItem.Name = "supprimerToolStripMenuItem";
+            this.supprimerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.supprimerToolStripMenuItem.Text = "Supprimer";
+            this.supprimerToolStripMenuItem.Click += new System.EventHandler(this.supprimerToolStripMenuItem_Click);
+            // 
             // FrmCarte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -431,6 +468,10 @@
         private System.Windows.Forms.Label lblBvn;
         private System.Windows.Forms.Button btnAjouter;
         private System.Windows.Forms.Button btnModifier;
+        private System.Windows.Forms.ToolStripMenuItem cartesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ajouterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modifierToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem supprimerToolStripMenuItem;
     }
 }
 
