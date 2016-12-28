@@ -91,7 +91,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 13);
             this.label2.TabIndex = 8;
-            this.label2.Text = "Identifiant : ";
+            this.label2.Text = "Mot de passe : ";
             // 
             // label1
             // 
